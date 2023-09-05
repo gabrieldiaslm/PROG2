@@ -1,3 +1,5 @@
+import "dart:io";
+
 /*
 var digits = {
   0:6,
@@ -23,8 +25,13 @@ void main() {
 }
 
 int ledsCounter(int number) {
-  const digits = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+  const digits = [6, 2, 5, 5, 4, 5, 6, 3, 7, 6];
   int leds = 0;
 
-  
+  do {
+    leds += digits[number % 10];
+    number = number ~/ 10;
+  } while (number > 0);
+
+  return leds;
 }
