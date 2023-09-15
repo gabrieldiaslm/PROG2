@@ -5,5 +5,5 @@ void main() {
   const white = 1;
 
   int lines = int.parse(stdin.readLineSync()!);
-  int cols = 
+  int cols = 1; // (não é 1);
 }
