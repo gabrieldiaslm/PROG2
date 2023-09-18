@@ -26,3 +26,12 @@ int mdc(int a, int b) {
   }
   return a;
 }
+
+int mdcr(int a, int b) {
+  if (a < b) {
+    return mdcr(b, a);
+  } else if (a > b) {
+    return mdcr(a - b, b);
+  }
+  return a;
+}

@@ -1,12 +1,15 @@
-import "dart:io";
+//
+// Beecrowd 1168
+//
+import 'dart:io';
 
 void main() {
   int cases = int.parse(stdin.readLineSync() ?? '0');
 
   while (cases-- > 0) {
-    var number = stdin.readLineSync() ?? '0';
+    var number = stdin.readLineSync() ?? '';
 
-    print(ledsCounter(number));
+    print('${ledsCounter(number)} leds');
   }
 }
 
@@ -26,17 +29,24 @@ int ledsCounter(String number) {
   int leds = 0;
 
   for (int i = 0; i < number.length; i++) {
-    leds += digits[number[i]] ?? 0;
     // leds += digits[number[i]]!;
+    leds += digits[number[i]] ?? 0;
   }
   return leds;
 }
-  /*
+
+/* 
+ * Doesn't work for big numbers (> 2^32)
+ * 
+int ledsCounter(int number) {
+  const digits = [6, 2, 5, 5, 4, 5, 6, 3, 7, 6];
+  int leds = 0;
+
   do {
     leds += digits[number % 10];
     number = number ~/ 10;
   } while (number > 0);
 
   return leds;
-  }
+}
 */
