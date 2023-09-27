@@ -83,4 +83,76 @@ t a      h
   //- for loops
   //- while and do while loops
   //- break and continue
+
+//null
+
+  late String name;
+  name = 'Nome';
+  print(name);
+
+//IF E SWITCH (ESTRUTURAS DE CONTROLE DE FLUXO)
+
+  bool seguirEmFrente = true;
+
+  if (seguirEmFrente) {
+    print('Andar');
+  } else {
+    print('Parar');
+  }
+
+  if (10 > 5) {
+    print('10 é maior q 5');
+  }
+
+  int valInt = 3; //1 ,2 ,0 ,outro valor
+  switch (valInt) {
+    case 0:
+      print('zero');
+      break;
+    case 1:
+      print('um');
+      break;
+    case 2:
+      print('dois');
+      break;
+    default:
+      print('Padrão');
+  }
+
+  // ESTRUTURAS DE REPETIÇÃO (for e while)
+  for (int i = 1; i <= 10; i++) {
+    print(i * 2);
+  }
+  int contador = 10;
+  while (contador != 0) {
+    print('loop -> $contador');
+    contador = contador - 1;
+  }
+
+  //CLASSES, MÉTODOS E ATRIBUTOS
+  Celular celularGdias = Celular('Preto', 5, 0.400, 6.2);
+  Celular celularRoubado = Celular('Azul', 4, 1.10, 5.7);
+  print(celularGdias.toString());
+  double resultado1 = celularGdias.valorDoCelular(1000);
+  print('preço do celular: R\$ $resultado1');
+  print(celularRoubado.toString());
+}
+
+//classe
+class Celular {
+  final String cor;
+  final int processador;
+  final double tamanho;
+  final double peso;
+
+  Celular(this.cor, this.processador, this.peso, this.tamanho);
+
+  //metodo toString
+  String toString() {
+    return 'Cor: $cor, Processadores: $processador, Peso: $peso kilogramas, Tamanho: $tamanho polegadas';
+  }
+
+  double valorDoCelular(double valor) {
+    return valor * processador;
+  }
 }
