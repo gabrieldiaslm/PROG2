@@ -96,9 +96,9 @@ t a      h
 
   if (seguirEmFrente) {
     print('Andar');
-  } else {
-    print('Parar');
-  }
+  } //else {
+//    print('Parar');
+//  }
 
   if (10 > 5) {
     print('10 é maior q 5');
@@ -136,6 +136,24 @@ t a      h
   double resultado1 = celularGdias.valorDoCelular(1000);
   print('preço do celular: R\$ $resultado1');
   print(celularRoubado.toString());
+
+  Carro mercedes = Carro('mercedes');
+  Carro gol = Carro('gol');
+  print(mercedes.modelo);
+  print(mercedes.valorDoCarro);
+  mercedes.setValue(2000);
+  print(mercedes.valorDoCarro);
+  print(mercedes._segredo);
+
+  Deivid deivid = Deivid();
+  deivid.falar();
+
+  Pagamento pagamento = PagarComBoleto();
+  pagamento.pagar();
+
+  pagamento = PagarComPix();
+  pagamento.pagar();
+  
 }
 
 //classe
@@ -148,11 +166,68 @@ class Celular {
   Celular(this.cor, this.processador, this.peso, this.tamanho);
 
   //metodo toString
+  @override
   String toString() {
     return 'Cor: $cor, Processadores: $processador, Peso: $peso kilogramas, Tamanho: $tamanho polegadas';
   }
 
   double valorDoCelular(double valor) {
     return valor * processador;
+  }
+}
+
+//ORIENTAÇÃO A OBJETOS
+
+class Carro {
+  final String modelo;
+  final String _segredo = 'Muito Dinheiro';
+
+  int _valor = 1000;
+
+  int get valorDoCarro => _valor; //getter
+
+  void setValue(int valor) => _valor = valor; //setter
+
+  Carro(this.modelo);
+}
+
+// HERANÇA, POLIMORFISMO E ABSTRAÇÃO
+abstract class Pagamento {
+  void pagar();
+}
+
+class PagarComBoleto implements Pagamento {
+  void pagar() {
+    print('Pagando com Boleto');
+  }
+}
+
+class PagarComPix implements Pagamento {
+  void pagar() {
+    print('Pagando com Pix');
+  }
+}
+
+class Pai {
+  String falar() {
+    return 'Papai';
+  }
+}
+
+class Deivid extends Pai {}
+
+abstract class Pessoa {
+  String comunicar();
+}
+
+class PessoaET implements Pessoa {
+  String comunicar() {
+    return 'Olá Mundo';
+  }
+}
+
+class PessoaNaoET implements Pessoa {
+  String comunicar() {
+    return 'Bom Dia';
   }
 }
