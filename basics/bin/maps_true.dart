@@ -1,8 +1,6 @@
 // MAPS (usam chaves ao inves de index)
 
 void main() {
-  List<String> lista = ['Deivid', 'Will'];
-
   //.  chave, valor
   Map<String, String> mapa = {'chave': 'valor'};
   print(mapa);
