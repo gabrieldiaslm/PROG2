@@ -62,7 +62,7 @@ t a      h
   print(nomes);
 
   //MAPS**
-  // bora_bill
+  'maps_true.dart';
 
 //BRANCHES https://dart.dev/language/branches
   //IF
@@ -138,6 +138,7 @@ t a      h
   print(celularRoubado.toString());
 
   Carro mercedes = Carro('mercedes');
+  // ignore: unused_local_variable
   Carro gol = Carro('gol');
   print(mercedes.modelo);
   print(mercedes.valorDoCarro);
@@ -153,7 +154,6 @@ t a      h
 
   pagamento = PagarComPix();
   pagamento.pagar();
-  
 }
 
 //classe
