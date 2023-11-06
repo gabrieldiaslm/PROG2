@@ -33,8 +33,7 @@ class Transaction {
     this.description,
   }) : date = DateTime.now();
 
-  static bool isCredit(TransactionType type) =>
-      _creditTransactions.contains(type);
-  static bool isDebit(TransactionType type) =>
-      !_creditTransactions.contains(type);
+  bool isCredit() => _creditTransactions.contains(type);
+
+  bool isDebit() => !_creditTransactions.contains(type);
 }
