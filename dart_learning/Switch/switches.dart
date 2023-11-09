@@ -2,7 +2,7 @@
 void main() {
   const number = 3;
 
-  //jeito paia
+  //jeito paia ;/
   if (number == 1) {
     print('1');
   } else if (number == 2) {
